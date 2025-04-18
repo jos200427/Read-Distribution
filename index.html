@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Read Distribution</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      background: linear-gradient(90deg, #0057b8, #009ee3); /* Azul com gradiente */
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 18px;
+      margin-top: 5px;
+    }
+
+    .menu-icon div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+    }
+
+    .search-area {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .search-bar {
+      width: 60%;
+      max-width: 500px;
+      padding: 8px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+
+    .login-button {
+      background-color: #ffc107;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: 15px;
+    }
+
+    .social-icons img {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo-area">
+      <div>
+        <div class="logo">Read Distribution</div>
+        <div class="menu-icon">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="search-area">
+      <input type="text" class="search-bar" placeholder="Pesquisar livros..." />
+      <button class="login-button">Login</button>
+    </div>
+
+    <div class="social-icons">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" />
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+    </div>
+  </div>
+
+</body>
+</html>
