@@ -154,6 +154,59 @@
   font-size: 22px;
   cursor: pointer;
 }
+    .marketplace {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  color: #0057b8;
+  font-size: 22px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.book-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.book-card {
+  background-color: white;
+  padding: 15px;
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.book-card h3 {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.book-card p {
+  margin: 2px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.book-card button {
+  margin-top: 10px;
+  background-color: #0057b8;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
 
 
   </style>
@@ -194,6 +247,44 @@
       <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
     </div>
   </div>
+  
+<div class="marketplace">
+
+  <!-- Destaque -->
+  <div class="section">
+    <h2>Destaque</h2>
+    <div class="book-grid" id="destaque-livros">
+      <!-- Livros em destaque serão adicionados aqui -->
+    </div>
+  </div>
+
+  <!-- A 30 Dias -->
+  <div class="section">
+    <h2>A 30 dias</h2>
+    <div class="book-grid" id="a30dias-livros">
+      <!-- Livros com mais de 30 dias serão adicionados aqui -->
+    </div>
+  </div>
+
+  <!-- Autores -->
+  <div class="section">
+    <h2>Autores</h2>
+    <div class="book-grid" id="autores-livros">
+      <!-- Livros por autor -->
+    </div>
+  </div>
+
+  <!-- Revendedores -->
+  <div class="section">
+    <h2>Revendedores</h2>
+    <div class="book-grid" id="revendedores-livros">
+      <!-- Livros por revendedor -->
+    </div>
+  </div>
+
+</div>
+
+  
   <script>
   function toggleMenu() {
     const menu = document.getElementById('menu-options');
