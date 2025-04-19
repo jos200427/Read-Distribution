@@ -206,6 +206,51 @@
   cursor: pointer;
   font-size: 14px;
 }
+   .book-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.book-cover {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.book-info {
+  margin-top: 10px;
+}
+
+.book-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.book-author {
+  font-size: 14px;
+  color: #666;
+}
+
+.book-price {
+  margin: 8px 0;
+  color: #009ee3;
+  font-weight: bold;
+}
+
+.buy-button {
+  background-color: #ffc107;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+ 
 
 
 
@@ -254,7 +299,17 @@
   <div class="section">
     <h2>Destaque</h2>
     <div class="book-grid" id="destaque-livros">
-      <!-- Livros em destaque serão adicionados aqui -->
+      
+     <div class="book-card">
+  <img src="/mnt/data/A_2D_digital_graphic_of_a_book_cover_for_a_self-he.png" alt="Capa do Livro" class="book-cover" />
+  <div class="book-info">
+    <h3 class="book-title">A Mente Milionária</h3>
+    <p class="book-author">por Joss Joseph</p>
+    <p class="book-price">Kz 3.500</p>
+    <button class="buy-button">Comprar</button>
+  </div>
+</div>
+ <!-- Livros em destaque serão adicionados aqui -->
     </div>
   </div>
 
