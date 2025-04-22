@@ -322,6 +322,38 @@
   animation: descerLogo 1.2s ease-out;
 }
 
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 90%;
+  width: 500px;
+  position: relative;
+}
+
+.modal-content .close {
+  position: absolute;
+  right: 15px; top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
 
 
 
@@ -356,21 +388,18 @@
     <div class="search-area">
       <input type="text" class="search-bar" placeholder="Pesquisar livros..." />
       <button class="login-button" onclick="openLoginModal()">Login</button>
-      <div id="loginModal" class="login-modal">
-  <div class="login-content">
+      <!-- Modal Criar Conta / Login -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeLoginModal()">&times;</span>
     <h2>Criar Conta</h2>
-      <div class="form">
-  <p>Preencha o formulário para criar sua conta:</p>
-  <a href="https://forms.gle/u2sRdUor8rG8GNvE8" target="_blank">
-    <button style="padding: 10px 15px; background-color: #0057b8; color: white; border: none; border-radius: 4px; cursor: pointer;">
-      Criar Conta
-    </button>
-  </a>
-</div>
-
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLScaxuUNPuz1eulcgA0EucXwQwfffV51BkoL8fXhsZ3n_A0dFA/viewform?embedded=true"
+      width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0"
+      style="border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"
+    >Carregando…</iframe>
   </div>
 </div>
-
 
     </div>
 
@@ -452,39 +481,21 @@
     <button class="modal-btn">Entrar</button>
   </div>
 </div>
+
   <script>
   function openLoginModal() {
-    document.getElementById('loginModal').style.display = 'block';
+    document.getElementById('loginModal').classList.add('show');
   }
-
   function closeLoginModal() {
-    document.getElementById('loginModal').style.display = 'none';
+    document.getElementById('loginModal').classList.remove('show');
   }
-
-  // Fecha o modal se clicar fora
-  window.onclick = function(event) {
+  // fecha ao clicar fora
+  window.addEventListener('click', function(e) {
     const modal = document.getElementById('loginModal');
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
-  }
-</script>
-
-  <script>
-  const loginBtn = document.querySelector(".login-button");
-  const loginModal = document.getElementById("loginModal");
-
-  loginBtn.addEventListener("click", () => {
-    loginModal.classList.toggle("show");
-  });
-
-  // Fecha o modal ao clicar fora dele
-  window.addEventListener("click", function(e) {
-    if (e.target === loginModal) {
-      loginModal.classList.remove("show");
-    }
+    if (e.target === modal) closeLoginModal();
   });
 </script>
+
 
 
 
