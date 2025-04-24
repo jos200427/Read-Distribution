@@ -367,6 +367,27 @@
 }
 
 
+    .access-read {
+  font-size: 20px;               /* agora maior */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+  
+  /* gradiente azul */
+  background: linear-gradient(90deg, #0057b8, #009ee3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.welcome-text {
+  font-size: 16px;               /* agora menor */
+  font-weight: 700;
+  text-align: center;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+
 
 
 
@@ -402,16 +423,19 @@
     <div class="search-area">
       <input type="text" class="search-bar" placeholder="Pesquisar livros..." />
       <button class="login-button" onclick="openLoginModal()">Login</button>
-
-     <!-- Modal de Escolha: Entrar ou Criar Conta -->
 <div id="choiceModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeChoiceModal()">&times;</span>
+
+    <div class="access-read">Acesso Read</div>
+    <div class="welcome-text">Seja bem-vindo</div>
+
     <h2>O que deseja fazer?</h2>
     <button class="modal-btn" onclick="window.location.href='minha-conta.html'">Entrar</button>
     <button class="modal-btn" onclick="chooseOption('signup')">Criar Conta</button>
   </div>
 </div>
+
  
       <!-- Modal Criar Conta / Login -->
 <div id="loginModal" class="modal">
