@@ -388,6 +388,17 @@
     <div class="search-area">
       <input type="text" class="search-bar" placeholder="Pesquisar livros..." />
       <button class="login-button" onclick="openLoginModal()">Login</button>
+
+     <!-- Modal de Escolha: Entrar ou Criar Conta -->
+<div id="choiceModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeChoiceModal()">&times;</span>
+    <h2>O que deseja fazer?</h2>
+    <button class="modal-btn" onclick="chooseOption('login')">Entrar</button>
+    <button class="modal-btn" onclick="chooseOption('signup')">Criar Conta</button>
+  </div>
+</div>
+ 
       <!-- Modal Criar Conta / Login -->
 <div id="loginModal" class="modal">
   <div class="modal-content">
@@ -494,6 +505,27 @@
     if (e.target === modal) closeLoginModal();
   });
 </script>
+
+  <script>
+  function openLoginModal() {
+    document.getElementById('choiceModal').classList.add('show');
+  }
+
+  function closeChoiceModal() {
+    document.getElementById('choiceModal').classList.remove('show');
+  }
+
+  function chooseOption(option) {
+    closeChoiceModal();
+
+    if (option === 'signup') {
+      const loginModal = document.getElementById('loginModal');
+      loginModal.classList.add('show');
+    }
+    // Se a opção for "login", não faz nada
+  }
+</script>
+
 
 
 
