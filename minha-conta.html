@@ -42,16 +42,18 @@
       margin-top: 2rem;
       color: black;
     }
-    .animated-read {
-      font-weight: bold;
-      font-size: 24px;
-      animation: moveRead 2s infinite alternate;
-    }
-    @keyframes moveRead {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(20px); }
-    }
-  </style>
+  .animated-read {
+    font-weight: bold;
+    font-size: 24px;
+    animation: moveRead 2s infinite alternate;
+    display: inline-block;
+  }
+
+  @keyframes moveRead {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(5px); }
+  }
+</style>
 </head>
 <body>
   <div class="login-box">
