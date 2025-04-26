@@ -72,23 +72,43 @@
   </div>
 
   <script>
-    // Para agora, apenas exemplo fixo:
-    const emailCorreto = "exemplo@email.com";
-    const senhaCorreta = "read2024";
+  async function verificarLogin() {
+    const emailDigitado = document.getElementById("emailInput").value.trim();
+    const senhaDigitada = document.getElementById("senhaInput").value.trim();
+    const erro = document.getElementById("erro");
+    const conteudo = document.getElementById("content");
 
-    function verificarLogin() {
-      const emailDigitado = document.getElementById("emailInput").value.trim();
-      const senhaDigitada = document.getElementById("senhaInput").value.trim();
-      const erro = document.getElementById("erro");
-      const conteudo = document.getElementById("content");
+    if (!emailDigitado || !senhaDigitada) {
+      erro.textContent = "Por favor, preencha todos os campos.";
+      return;
+    }
 
-      if (emailDigitado === emailCorreto && senhaDigitada === senhaCorreta) {
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycby6mQkiOQbjKcAsefWqkrlGWrhm8OmJQPeHbHb5Pwxp2ml0kZNhmfFUOcysQK5L4O2p/exec', {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: emailDigitado,
+          senha: senhaDigitada
+        })
+      });
+
+      const resultado = await response.json();
+
+      if (resultado.sucesso) {
         document.querySelector(".login-box").style.display = "none";
         conteudo.style.display = "block";
       } else {
         erro.textContent = "E-mail ou senha incorretos. Tente novamente.";
       }
+    } catch (err) {
+      console.error(err);
+      erro.textContent = "Erro ao conectar ao servidor. Tente novamente mais tarde.";
     }
-  </script>
+  }
+</script>
 </body>
 </html>
